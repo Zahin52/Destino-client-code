@@ -1,18 +1,18 @@
-# Gentle care
-## _The best Health care in Bangladesh_
+# Destino
+## _The best travelling care in Bangladesh_
 
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ## Live link
 
-Feel free to visite our site [Gentle Care](https://gentle-care.web.app/)
+Feel free to visite our site [Destino]()
 
 ## Features
-Gentle care is the best Health care clinic in Bangladesh.
+Destino is the best travel site in Bangladesh.
 
-- Best doctors around the world
+- Best Plans 
 - Low cost
-- High technology
+- High ratings
 - Professional stuffs
 - Afordable packages
