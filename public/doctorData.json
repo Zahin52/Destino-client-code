@@ -1,0 +1,24 @@
+[
+    {
+        
+        "name":"Karim uddin",
+        "certificates":"He is the best doctor in the town. Best and well educated surgen",
+        "docImage":"images/dentist1.png",    
+        "rating": 4
+    },
+    {
+        
+        "name":"Sultana tasnim",
+        "certificates":"Best dentist in the town",
+        "docImage":"images/dentist2.png",    
+        "rating": 4
+    },
+    {
+        
+        "name":"Borhan uddin",
+        "certificates":"Heart specialist",
+        "docImage":"images/dentist3.png",    
+        "rating": 4
+    }
+    
+]

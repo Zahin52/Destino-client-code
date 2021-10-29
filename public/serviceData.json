@@ -1,0 +1,52 @@
+
+[
+  {
+    "title": "Blood checkup",
+    "fee": 2500,
+    "details":"Checking the blood is good for health",
+    "Fulldetails":"A routine blood test consists of getting blood taken at your doctor's office or at a lab. Usually, the technician, nurse, or doctor will have you sit down on a chair with your feet on the ground. They will use an antibacterial wipe to cleanse the part of your arm where they'll draw blood.",
+    "id":"1",
+    "image": "images/1.jpg"
+  },
+  {
+    "title": "ECG test",
+    "fee": 1200,
+    "details":"Ecg test is high class",
+    "Fulldetails":"Generally, the test involves attaching a number of small, sticky sensors called electrodes to your arms, legs and chest. These are connected by wires to an ECG recording machine. You don't need to do anything special to prepare for the test. You can eat and drink as normal beforehand.",
+    "id":"2",
+    "image": "images/2.jpg"
+  },
+  {
+    "title": "Dental checkup",
+    "fee": 1500,
+    "details":"Check your tooth daily with great care",
+    "Fulldetails":"A check-up allows your dentist to see if you have any dental problems and helps you keep your mouth healthy. Leaving problems untreated could make them more difficult to treat in the future, so it's best to deal with problems early, or, if possible, prevent them altogether.",
+    "id":"3",
+    "image": "images/3.jpg"
+  },
+  {
+    "title":"baby care",
+    "fee": 1200,
+    "details":"care your baby like ours",
+    "Fulldetails":"The term infant care refers to the social welfare service concerning support for nursery facilities. and home fostering, taking care of and nurturing from 0 to 5 year old infants in a healthy and safe. manner, while providing them with education that is suitable for their mental and physical.",
+    "id":"4",
+    "image": "images/4.jpg"
+  },
+  {
+    "title": "Blood pressure check",
+    "fee": 1200,
+    "details":"Used to help diagnose and monitor lung conditions.",
+    "Fulldetails":"The easiest way to take your own blood pressure is to purchase an automated cuff. Automatic blood pressure machines are the easiest to use, and they're helpful if you have any hearing impairments. These types of blood pressure cuffs have a digital monitor that will display your blood pressure reading on a screen.",
+    "id":"5",
+    "image": "images/5.jpg"
+  },
+  {
+    "title": "lung checkup",
+    "fee": 1600,
+    "details":"lung checkup daily",
+    "Fulldetails":"A spirometry test measures how healthy your lungs are and can be used to help diagnose and monitor lung conditions. During the test, you will breathe out as much air as you can, as hard as you can, into a device called a spirometer.",
+    "id":"6",
+    "image": "images/6.jpg"
+  }
+
+]
