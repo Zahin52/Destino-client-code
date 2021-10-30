@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import Card from '../Servicecard/Servicecard'
 import useAuth from '../../context/useAuth'
-import './services.css'
+import './BookingForm.css'
 import axios from 'axios'
 
-export default function Services() {
+export default function BookingForm() {
    const { users } = useAuth()
    const [email, setEmail] = useState('')
    const [name, setName] = useState('')
@@ -28,13 +27,19 @@ export default function Services() {
          destination: info['title'],
          JourneyDate: journyStart.current.value,
          ReturnDate: journyEnd.current.value,
-         status: 'pendding',
+         status: 'pending',
       }
        console.log(bookingInfo)
        axios
           .post('https://immense-journey-76103.herokuapp.com/bookings', bookingInfo)
           .then((response) => {
-             console.log(response)
+              console.log(response)
+              if (response.status === 200) {
+                  alert("success")
+              }
+              else {
+                  alert("false")
+              }
           })
           .catch((error)=> {
              console.log(error)

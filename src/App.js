@@ -6,15 +6,17 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import 'font-awesome/css/font-awesome.min.css'
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
-import Services from './components/services/services'
+
 import Notfound from './components/notfound/notfound'
 import Footer from './components/Footer/Footer'
 import Appointment from './components/Appointment/Appointment'
-import Feedback from './components/feedback/Feedback'
+
 import Register from './components/register/Register'
 import Login from './components/login/Login'
 import AuthProvider from './context/authProvider'
-import PrivateRoute from './components/privateRoute/PrivateRoute';
+import PrivateRoute from './components/privateRoute/PrivateRoute'
+import MyBookings from './components/Mybookings/Mybookings'
+import BookingForm from './components/BookingForm/BookingForm'
 
 function App() {
    return (
@@ -30,10 +32,10 @@ function App() {
                      <Appointment />
                   </PrivateRoute>
                   <PrivateRoute exact path="/services/:id">
-                     <Services />
+                     <BookingForm />
                   </PrivateRoute>
                   <PrivateRoute exact path="/feedback">
-                     <Feedback />
+                     <MyBookings />
                   </PrivateRoute>
                   <Route exact path="/signup">
                      <Register />

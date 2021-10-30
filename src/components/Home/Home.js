@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../Servicecard/Servicecard'
+
+import Spinner from '../Spinner/Spinner'
 import './home.css'
 import SelctionContainer from './sectionContainer/selctionContainer'
 
@@ -7,18 +8,27 @@ export default function Home() {
    const [serviceInfo, setserviceInfo] = useState([])
    const [TestimonyInfo, setTestimonyInfo] = useState([])
    const [gallaryInfo, setgallaryInfo] = useState([])
+   const [spinner, setSpinner] = useState(true)
    useEffect(() => {
-      fetch('https://immense-journey-76103.herokuapp.com/services')
-         .then((res) => res.json())
-         .then((data) => setserviceInfo(data))
-      fetch('https://immense-journey-76103.herokuapp.com/testimony')
-         .then((res) => res.json())
-         .then((data) => setTestimonyInfo(data))
-      fetch('https://immense-journey-76103.herokuapp.com/gallary')
-         .then((res) => res.json())
-         .then((data) => setgallaryInfo(data))
+      try {
+         fetch('https://immense-journey-76103.herokuapp.com/services')
+            .then((res) => res.json())
+            .then((data) => setserviceInfo(data))
+         fetch('https://immense-journey-76103.herokuapp.com/testimony')
+            .then((res) => res.json())
+            .then((data) => setTestimonyInfo(data))
+         fetch('https://immense-journey-76103.herokuapp.com/gallary')
+            .then((res) => res.json())
+            .then((data) => setgallaryInfo(data))
+      } catch (error) {
+         console.log(error)
+      } finally {
+         setSpinner(false)
+      }
    }, [])
-
+   if (spinner) {
+     return <Spinner />
+   }
    return (
       <div>
          <div className="banner ">

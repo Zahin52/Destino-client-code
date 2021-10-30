@@ -5,7 +5,7 @@ import useAuth from '../../context/useAuth'
 
 export default function Header() {
    const { users, logout } = useAuth()
-    console.log(users);
+   console.log(users)
    return (
       <nav
          className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark "
@@ -38,16 +38,24 @@ export default function Header() {
                   >
                      Home
                   </NavHashLink>
-                  <NavLink className="nav-link" to="/appointment">
-                     Appointment
-                  </NavLink>
                   <NavHashLink smooth className="nav-link" to="/#services">
                      Services
                   </NavHashLink>
-                  <NavLink className="nav-link " to="/feedback">
-                     Feedback
-                       </NavLink>
-                       {users?.email && <span className="text-white p-2 border rounded-pill">{users.displayName}</span>}
+                  {users?.email && (
+                     <NavLink className="nav-link" to="/appointment">
+                        Appointment
+                     </NavLink>
+                  )}
+                  {users?.email && (
+                     <NavLink className="nav-link " to="/feedback">
+                        My Bookings
+                     </NavLink>
+                  )}
+                  {users?.email && (
+                     <span className="text-white p-2 border rounded-pill">
+                        {users.displayName}
+                     </span>
+                  )}
                   {users?.email ? (
                      <NavLink className="nav-link " to="/">
                         <button onClick={logout} className="btn btn-primary">
@@ -56,7 +64,9 @@ export default function Header() {
                      </NavLink>
                   ) : (
                      <NavLink className="nav-link " to="/signup">
-                        <button className="btn btn-primary">Register / Login</button>
+                        <button className="btn btn-primary">
+                           Register / Login
+                        </button>
                      </NavLink>
                   )}
                </div>
