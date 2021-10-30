@@ -1,41 +1,103 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Card from '../Servicecard/Servicecard'
+import useAuth from '../../context/useAuth'
+import './services.css'
 
 export default function Services() {
+   const { users } = useAuth()
+   const [email, setEmail] = useState('')
+   const [name, setName] = useState('')
+   //    const [email, setEmail] = useState('')
    const [details, setdetails] = useState([])
    useEffect(() => {
-      fetch('/serviceData.json')
+      fetch('https://immense-journey-76103.herokuapp.com/services')
          .then((res) => res.json())
-         .then((data) => setdetails(data))
+         .then((data) => {
+            setdetails(data)
+            setEmail(users.email)
+            setName(users.displayName)
+         })
    }, [])
-   console.log(details)
    const { id } = useParams()
-   console.log('id id ', id)
-   let detail = details.filter((item) => item.id === id)
+//    console.log('id id ', id)
+   let detail = details.filter((item) => item._id === id)
    const info = detail[0]
-//    console.log(detail)
    return (
-      <div className="container">
-         <div>
-            <h1 className="fw-bold text-capitalize mt-5 mb-4 text-center text-white opacity-75 bg-secondary px-4 py-2 rounded-pill border">
-               details
-            </h1>
-         </div>
-         <div className=" " style={{ 'min-height': '100vh' }}>
-            <div class="card text-center">
-               <div class="card-header fs-2">{detail.length && info['title']}</div>
-               <div class="card-body">
-                  <div>
-                     <img src={detail.length && "/"+info['image']} alt="" />
-                  </div>
-                  <div class="card-text fs-3">
-                     {detail.length && info['Fulldetails']}
+      <div id="booking" class="section p-4">
+         <div class="section-center">
+            <div class="container">
+               <div class="row">
+                  <div class="booking-form">
+                     <div class="form-header">
+                        <h1>Make your reservation</h1>
+                     </div>
+                     <form>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <input
+                                    class="form-control w-100"
+                                    type="email"
+                                    value={email}
+                                    placeholder="Enter your Email"
+                                 />
+                                 <span class="form-label">Email</span>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <input
+                                    class="form-control w-100"
+                                    type="text"
+                                    value={name}
+                                    placeholder="Enter you Name"
+                                 />
+                                 <span class="form-label">Name</span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <input
+                              class="form-control w-100"
+                              type="text"
+                              value={detail.length && info['title']}
+                              placeholder="Country, ZIP, city..."
+                           />
+                           <span class="form-label">Destination</span>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <input
+                                    class="form-control w-100"
+                                    type="date"
+                                    required
+                                 />
+                                 <span class="form-label">Check In</span>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <input
+                                    class="form-control w-100"
+                                    type="date"
+                                    required
+                                 />
+                                 <span class="form-label">Check out</span>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="form-btn">
+                           <button class="submit-btn">Book Now</button>
+                        </div>
+                     </form>
                   </div>
                </div>
-               <div class="card-footer text-muted">Updated : 2 days ago</div>
             </div>
          </div>
       </div>
    )
+   
 }

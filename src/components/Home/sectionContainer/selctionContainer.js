@@ -1,6 +1,6 @@
 import React from 'react'
 import ServiceCard from '../../Servicecard/Servicecard'
-import DoctorCard from '../../doctorCard/doctorCard'
+import TestimonyCard from '../../testimonyCard/testimonyCard'
 import GallaryCard from '../../gallaryCard/GallaryCard'
 
 export default function selctionContainer({ sectionTitle, data, cardType }) {
@@ -29,17 +29,14 @@ export default function selctionContainer({ sectionTitle, data, cardType }) {
       return (
          <div>
             <div className="container">
-               <h1
-                  style={{ 'background-color': '#fc6c85' }}
-                  className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
-               >
+               <h1 className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-secondary py-2 opacity-75">
                   {sectionTitle}
                </h1>
             </div>
-            <div id="services" className=" px-4">
-               <div className="row row-cols-1 row-cols-lg-3 g-3  mx-auto justify-content-center my-4">
+            <div id="testimony" className=" px-4">
+               <div className="row row-cols-1 row-cols-lg-3 g-3 p-5 mx-auto justify-content-center">
                   {data.map((data, i) => (
-                     <DoctorCard key={i} info={data} />
+                     <TestimonyCard key={i} info={data} />
                   ))}
                </div>
             </div>
@@ -50,15 +47,12 @@ export default function selctionContainer({ sectionTitle, data, cardType }) {
       return (
          <div>
             <div className="container">
-               <h1
-                  style={{ 'background-color': '#fc6c85' }}
-                  className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
-               >
+               <h1 className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-secondary py-2 opacity-75">
                   {sectionTitle}
                </h1>
             </div>
-            <div id="services" className=" px-4">
-               <div className="row row-cols-1 row-cols-lg-3 g-3  mx-auto justify-content-center my-4">
+            <div id="gallary" className=" px-4">
+               <div className="row row-cols-1 row-cols-lg-3 g-3 p-5 mx-auto justify-content-center">
                   {data.map((data, i) => (
                      <GallaryCard key={i} info={data} />
                   ))}

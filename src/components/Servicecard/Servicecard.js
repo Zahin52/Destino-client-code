@@ -6,7 +6,7 @@ import './card.css'
 
 export default function Servicecard({ info }) {
    console.log(info)
-   const { image, title, fee, id, details } = info
+   const { image, title, fee, _id, details } = info
    return (
       <div className="col h-auto p-3 card-parent rounded-3">
          <div className="card h-100   pt-3 px-3 mb-3 ">
@@ -15,11 +15,19 @@ export default function Servicecard({ info }) {
             </div>
             <div className="card-body d-flex flex-column">
                <h5 className="card-title">{title}</h5>
-               <p className="card-text text-secondary" style={{"font-size":".9rem"}}>{details}</p>
+               <p
+                  className="card-text text-secondary"
+                  style={{ 'font-size': '.9rem' }}
+               >
+                  {details}
+               </p>
                <div className=" mt-auto">
-                  <a href className="btn btn-outline-success btn-sm">
+                  <NavLink
+                     to={`/services/${_id}`}
+                     className="btn btn-outline-success btn-sm"
+                  >
                      Place Order
-                  </a>
+                  </NavLink>
                   <a href className="btn btn-outline-danger btn-sm ms-2 ">
                      ${fee}
                   </a>
