@@ -42,12 +42,12 @@ export default function Header() {
                      Services
                   </NavHashLink>
                   {users?.email && (
-                     <NavLink className="nav-link" to="/appointment">
-                        Appointment
+                     <NavLink className="nav-link" to="/allBookings">
+                        All Bookings
                      </NavLink>
                   )}
                   {users?.email && (
-                     <NavLink className="nav-link " to="/feedback">
+                     <NavLink className="nav-link " to="/myBookings">
                         My Bookings
                      </NavLink>
                   )}

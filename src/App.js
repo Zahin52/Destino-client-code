@@ -9,7 +9,7 @@ import Home from './components/Home/Home'
 
 import Notfound from './components/notfound/notfound'
 import Footer from './components/Footer/Footer'
-import Appointment from './components/Appointment/Appointment'
+import AllBookings from './components/AllBooking/Allbookings'
 
 import Register from './components/register/Register'
 import Login from './components/login/Login'
@@ -28,13 +28,13 @@ function App() {
                   <Route exact path="/">
                      <Home />
                   </Route>
-                  <PrivateRoute exact path="/appointment">
-                     <Appointment />
+                  <PrivateRoute exact path="/allBookings">
+                     <AllBookings />
                   </PrivateRoute>
                   <PrivateRoute exact path="/services/:id">
                      <BookingForm />
                   </PrivateRoute>
-                  <PrivateRoute exact path="/feedback">
+                  <PrivateRoute exact path="/myBookings">
                      <MyBookings />
                   </PrivateRoute>
                   <Route exact path="/signup">
