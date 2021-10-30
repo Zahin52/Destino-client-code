@@ -15,16 +15,7 @@ export default function myBookingCards({ info }) {
       childrenNo,
       roomNo,
    } = info
-   console.log(
-      _id,
-      name,
-      destination,
-      email,
-      JourneyDate,
-      ReturnDate,
-      status,
-      address,
-   )
+  
    const CancleBooking = (id) => {
       const confirm = window.confirm('Do you want to cancle the Booking?')
       if (confirm) {

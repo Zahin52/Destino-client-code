@@ -6,8 +6,8 @@ export default function PrivateRoute({ children, ...rest }) {
     const { users, isLoading } = useAuth()
     if (isLoading) {
         return (
-           <div class="spinner-grow text-primary" role="status">
-              <span class="sr-only">Loading...</span>
+           <div className="spinner-grow text-primary" role="status">
+              <span className="sr-only">Loading...</span>
            </div>
         )
     }

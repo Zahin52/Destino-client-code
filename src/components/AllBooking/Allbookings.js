@@ -12,7 +12,6 @@ export default function MyBookings() {
       axios
          .get('https://immense-journey-76103.herokuapp.com/myBookings')
          .then((res) => {
-            
             setData(res.data)
             setSpinner(false)
          })

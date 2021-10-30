@@ -47,19 +47,19 @@ export default function Footer() {
                         href="https://gentle-care.web.app/"
                         className="mx-2 text-white"
                      >
-                        <i class="fa fa-facebook-square fa-2x"></i>
+                        <i className="fa fa-facebook-square fa-2x"></i>
                      </a>
                      <a
                         href="https://gentle-care.web.app/"
                         className="mx-2 text-white"
                      >
-                        <i class="fa fa-github-square fa-2x"></i>
+                        <i className="fa fa-github-square fa-2x"></i>
                      </a>
                      <a
                         href="https://gentle-care.web.app/"
                         className="mx-2 text-white"
                      >
-                        <i class="fa fa-twitter-square fa-2x"></i>
+                        <i className="fa fa-twitter-square fa-2x"></i>
                      </a>
                   </div>
                </div>
