@@ -42,7 +42,12 @@ export default function myBookingCards({ info }) {
       const confirm = window.confirm('Do you want to Accept the Booking?')
       if (confirm) {
          axios
-            .put(`https://immense-journey-76103.herokuapp.com/${_id}`)
+            .put(
+               `https://immense-journey-76103.herokuapp.com/bookings/${_id}`,
+               {
+                  "status": "Accepted",
+               },
+            )
             .then((res) => {
                console.log(res)
             })
