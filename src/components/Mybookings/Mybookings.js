@@ -2,15 +2,18 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Spinner from '../Spinner/Spinner'
 import MyBookingCards from './MybookingCards/myBookingCards'
+import useAuth from '../../context/useAuth'
 
 export default function MyBookings() {
    const [data, setData] = useState([])
    const [Spinners, setSpinner] = useState(true)
+   const { users } = useAuth()
    useEffect(() => {
       axios
          .get('https://immense-journey-76103.herokuapp.com/myBookings')
          .then((res) => {
-            setData(res.data)
+            const data = res.data.filter((item) => item.email === users.email)
+            setData(data)
             setSpinner(false)
          })
    }, [data])

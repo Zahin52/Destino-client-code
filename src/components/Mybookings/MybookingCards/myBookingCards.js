@@ -2,9 +2,29 @@ import axios from 'axios'
 import React from 'react'
 
 export default function myBookingCards({ info, Dataset }) {
-   const { _id, name, destination, email, JourneyDate, ReturnDate, status } =
-      info
-   console.log(_id, name, destination, email, JourneyDate, ReturnDate, status)
+   const {
+      _id,
+      name,
+      destination,
+      email,
+      JourneyDate,
+      ReturnDate,
+      status,
+      address,
+      adultNo,
+      childrenNo,
+      roomNo,
+   } = info
+   console.log(
+      _id,
+      name,
+      destination,
+      email,
+      JourneyDate,
+      ReturnDate,
+      status,
+      address,
+   )
    const CancleBooking = (id) => {
       const confirm = window.confirm('Do you want to cancle the Booking?')
       if (confirm) {
@@ -37,10 +57,25 @@ export default function myBookingCards({ info, Dataset }) {
                   <span>Name :</span> <span>{name}</span>
                </p>
                <p className="card-text">
+                  <span>Address :</span> <span>{address}</span>
+               </p>
+
+               <p className="card-text">
                   <span>Journey Date :</span> <span>{JourneyDate}</span>
                </p>
                <p className="card-text">
                   <span>Return Date :</span> <span>{ReturnDate}</span>
+               </p>
+               <p className="card-text d-flex justify-content-between">
+                  <div className="me-2">
+                     <span>Room :</span> <span>{roomNo}</span>
+                  </div>
+                  <div className="me-2">
+                     <span>Adult :</span> <span>{adultNo}</span>
+                  </div>
+                  <div className="me-2">
+                     <span>Children :</span> <span>{childrenNo}</span>
+                  </div>
                </p>
             </div>
             <div className="card-footer bg-transparent border-success">
