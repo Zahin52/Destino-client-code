@@ -26,7 +26,7 @@ export default function myBookingCards({ info, Dataset }) {
       address,
    )
    const CancleBooking = (id) => {
-      const confirm = window.confirm('Do you want to cancle the Booking?')
+      const confirm = window.confirm('Do you want to cancel the Booking?')
       if (confirm) {
          axios
             .delete(

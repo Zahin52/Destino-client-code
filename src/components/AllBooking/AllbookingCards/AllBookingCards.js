@@ -90,7 +90,7 @@ export default function myBookingCards({ info }) {
                   onClick={() => CancleBooking(_id)}
                   className="btn btn-outline-danger col me-2"
                >
-                  Cancle
+                  Cancel
                </button>
                {status === 'pending' ? (
                   <button

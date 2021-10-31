@@ -2,21 +2,24 @@ import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import './style.css'
+import { useHistory } from 'react-router-dom'
 
 export default function App() {
    const {
       register,
-       handleSubmit,
+      handleSubmit,
       reset,
       formState: { errors },
    } = useForm()
+   const history = useHistory()
    const onSubmit = (data) => {
       console.log(data)
       axios
          .post('https://immense-journey-76103.herokuapp.com/services', data)
-          .then((res) => {
-              alert("Succesfully Added")
-              reset()
+         .then((res) => {
+            alert('Succesfully Added destination')
+            reset()
+            history.push('/#services')
          })
          .catch((err) => console.log(err))
    }
@@ -24,7 +27,7 @@ export default function App() {
 
    return (
       <div
-         className="text-secondary container w-50 addDestination py-5"
+         className="text-secondary container col-12 col-md-8 addDestination py-5"
          style={{ 'min-height': 'calc(100vh - 292px)' }}
       >
          <div className="text-center">
@@ -45,7 +48,7 @@ export default function App() {
             <input
                type="text"
                className="w-100"
-               placeholder="Price"
+               placeholder="Price (per person)"
                {...register('fee', { required: true })}
             />
             <input
@@ -56,7 +59,7 @@ export default function App() {
             />
 
             <input
-               className="text-white"
+               className="text-white p-3"
                value="Add Destination"
                type="submit"
             />

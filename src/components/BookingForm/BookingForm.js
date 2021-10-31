@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import useAuth from '../../context/useAuth'
 import './BookingForm.css'
+import Spinner from '../Spinner/Spinner'
 import axios from 'axios'
 
 export default function BookingForm() {
@@ -15,6 +16,8 @@ export default function BookingForm() {
    const journyStart = useRef('')
    const journyEnd = useRef('')
    const [details, setdetails] = useState([])
+   const [spinner, setSpinner] = useState(true)
+   const history = useHistory()
    useEffect(() => {
       fetch('https://immense-journey-76103.herokuapp.com/services')
          .then((res) => res.json())
@@ -22,6 +25,7 @@ export default function BookingForm() {
             setdetails(data)
             setEmail(users.email)
             setName(users.displayName)
+            setSpinner(false)
          })
    }, [])
    const confirmBooking = (e) => {
@@ -59,9 +63,10 @@ export default function BookingForm() {
          .then((response) => {
             console.log(response)
             if (response.status === 200) {
-               alert('success')
+               alert('Booking Done')
+               history.push('/myBookings')
             } else {
-               alert('false')
+               alert('Something went wrong while Booking. Try again')
             }
          })
          .catch((error) => {
@@ -72,6 +77,9 @@ export default function BookingForm() {
    //    console.log('id id ', id)
    let detail = details.filter((item) => item._id === id)
    const info = detail[0]
+   if (spinner) {
+      return <Spinner />
+   }
    return (
       <div id="booking" className="section p-4">
          <div className="section-center">
@@ -94,14 +102,16 @@ export default function BookingForm() {
                         </p>
                         <div>
                            <div>
-                              <span className="fs-5 text-info">Includes :</span>
                               <span className="fs-5 text-info">
-                                 Air tickets,hotel costs , food costs
+                                 Includes :{' '}
+                              </span>
+                              <span className="fs-5 text-info">
+                                 Air tickets,hotel costs,food costs
                               </span>
                            </div>
                         </div>
                         <p className="fs-3 text-info">
-                           Price : ${detail.length && info['fee']}
+                           Price : ${detail.length && info['fee']} (per person)
                         </p>
                      </div>
                   </div>

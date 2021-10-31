@@ -1,16 +1,13 @@
 import React from 'react'
 import useAuth from '../../context/useAuth'
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom'
+import Spinner from '../Spinner/Spinner'
 
 export default function PrivateRoute({ children, ...rest }) {
-    const { users, isLoading } = useAuth()
-    if (isLoading) {
-        return (
-           <div className="spinner-grow text-primary" role="status">
-              <span className="sr-only">Loading...</span>
-           </div>
-        )
-    }
+   const { users, isLoading } = useAuth()
+   if (isLoading) {
+      return <Spinner />
+   }
    return (
       <Route
          {...rest}

@@ -29,7 +29,7 @@ export default function Servicecard({ info }) {
                      Book Now
                   </NavLink>
                   <a href className="btn btn-outline-danger btn-sm ms-2 ">
-                     ${fee}
+                     ${fee} / P
                   </a>
                </div>
             </div>
