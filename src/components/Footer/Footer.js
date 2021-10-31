@@ -23,9 +23,9 @@ export default function Footer() {
                      <div>
                         <NavLink
                            className="text-decoration-none text-white"
-                           to="/appointment"
+                           to="/about"
                         >
-                           Appointment
+                           About
                         </NavLink>
                      </div>
                      <div>
@@ -44,19 +44,19 @@ export default function Footer() {
                   <h1>Contact us</h1>
                   <div>
                      <a
-                        href="https://gentle-care.web.app/"
+                        href="https://destino-7072b.web.app/"
                         className="mx-2 text-white"
                      >
                         <i className="fa fa-facebook-square fa-2x"></i>
                      </a>
                      <a
-                        href="https://gentle-care.web.app/"
+                        href="https://destino-7072b.web.app/"
                         className="mx-2 text-white"
                      >
                         <i className="fa fa-github-square fa-2x"></i>
                      </a>
                      <a
-                        href="https://gentle-care.web.app/"
+                        href="https://destino-7072b.web.app/"
                         className="mx-2 text-white"
                      >
                         <i className="fa fa-twitter-square fa-2x"></i>
@@ -64,7 +64,7 @@ export default function Footer() {
                   </div>
                </div>
             </div>
-            <p>Copyright &copy;2021 Gentle Care</p>
+            <p>Copyright &copy;2021 Destino</p>
          </div>
       </div>
    )

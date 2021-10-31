@@ -17,6 +17,8 @@ import AuthProvider from './context/authProvider'
 import PrivateRoute from './components/privateRoute/PrivateRoute'
 import MyBookings from './components/Mybookings/Mybookings'
 import BookingForm from './components/BookingForm/BookingForm'
+import About from './components/about/about'
+import AddDestination from './components/AddDestination/AddDestination'
 
 function App() {
    return (
@@ -28,6 +30,9 @@ function App() {
                   <Route exact path="/">
                      <Home />
                   </Route>
+                  <Route exact path="/about">
+                     <About />
+                  </Route>
                   <PrivateRoute exact path="/allBookings">
                      <AllBookings />
                   </PrivateRoute>
@@ -36,6 +41,9 @@ function App() {
                   </PrivateRoute>
                   <PrivateRoute exact path="/myBookings">
                      <MyBookings />
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/addDestination">
+                     <AddDestination />
                   </PrivateRoute>
                   <Route exact path="/signup">
                      <Register />

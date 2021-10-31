@@ -31,13 +31,20 @@ export default function Header() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                <div className="navbar-nav ms-auto d-flex justify-content-center align-items-center">
-                  <NavHashLink
+                  <NavLink
                      className="nav-link active"
                      aria-current="page"
                      to="/"
                   >
                      Home
-                  </NavHashLink>
+                  </NavLink>
+                  <NavLink
+                     className="nav-link"
+                     aria-current="page"
+                     to="/about"
+                  >
+                     About
+                  </NavLink>
                   <NavHashLink smooth className="nav-link" to="/#services">
                      Services
                   </NavHashLink>
@@ -49,6 +56,11 @@ export default function Header() {
                   {users?.email && (
                      <NavLink className="nav-link " to="/myBookings">
                         My Bookings
+                     </NavLink>
+                  )}
+                  {users?.email && (
+                     <NavLink className="nav-link " to="/addDestination">
+                        Add Destination
                      </NavLink>
                   )}
                   {users?.email && (

@@ -16,7 +16,7 @@ export default function selctionContainer({ sectionTitle, data, cardType }) {
                </h1>
             </div>
             <div id="services" className=" px-4 ">
-               <div className="row row-cols-1 row-cols-lg-3 g-3 p-5 mx-auto justify-content-center">
+               <div className="row row-cols-1 row-cols-lg-3  px-5 mx-auto justify-content-center">
                   {data.map((data, i) => (
                      <ServiceCard key={i} info={data} />
                   ))}
@@ -33,8 +33,8 @@ export default function selctionContainer({ sectionTitle, data, cardType }) {
                   {sectionTitle}
                </h1>
             </div>
-            <div id="testimony" className=" px-4">
-               <div className="row row-cols-1 row-cols-lg-3 g-3 p-5 mx-auto justify-content-center">
+            <div id="testimony" className=" py-5">
+               <div className="row row-cols-1 row-cols-lg-3 g-3 px-5 mx-auto justify-content-center">
                   {data.map((data, i) => (
                      <TestimonyCard key={i} info={data} />
                   ))}

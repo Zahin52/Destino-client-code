@@ -56,7 +56,7 @@ export default function myBookingCards({ info }) {
                Status : {status}
             </div>
             <div className="card-body text-success">
-               <h5 className="card-title">{destination}</h5>
+               <h5 className="card-title">Place : {destination}</h5>
                <p className="card-text">
                   <span>Email :</span> <span>{email}</span>
                </p>

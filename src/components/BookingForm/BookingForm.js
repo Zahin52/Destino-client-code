@@ -118,6 +118,7 @@ export default function BookingForm() {
                                     type="email"
                                     value={email}
                                     placeholder="Enter your Email"
+                                    readonly
                                  />
                                  <span className="form-label">Email</span>
                               </div>
@@ -129,6 +130,7 @@ export default function BookingForm() {
                                     type="text"
                                     value={name}
                                     placeholder="Enter you Name"
+                                    readonly
                                  />
                                  <span className="form-label">Name</span>
                               </div>
@@ -140,6 +142,7 @@ export default function BookingForm() {
                               type="text"
                               value={detail.length && info['title']}
                               placeholder="Destination..."
+                              readonly
                            />
                            <span className="form-label">Destination</span>
                         </div>
