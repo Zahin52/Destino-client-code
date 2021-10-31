@@ -7,7 +7,7 @@ export default function GallaryCard({ info }) {
    const { image } = info
 
    return (
-      <div className="col h-auto p-3 card-parent rounded-3">
+      <div className="col h-auto p-2 card-parent rounded-3">
          <div className="card h-100 shadow  text-capitalize text-center ">
             <div style={{ overflow: 'hidden' }}>
                <img src={image} className="card-img-top" alt="" />

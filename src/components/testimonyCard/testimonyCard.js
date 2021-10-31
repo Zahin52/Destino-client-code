@@ -6,7 +6,7 @@ export default function TestimonyCard({ info }) {
    //    console.log(info)
    const { name, testimony } = info
    return (
-      <div className="col-lg-4 mx-auto">
+      <div className="col-lg-4 py-3 mx-auto">
          <blockquote className="blockquote blockquote-custom bg-white p-5 shadow rounded  h-100 d-flex flex-column">
             <div className="blockquote-custom-icon bg-info shadow-sm">
                <i className="fa fa-quote-left text-white"></i>
