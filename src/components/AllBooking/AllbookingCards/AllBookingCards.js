@@ -15,7 +15,7 @@ export default function myBookingCards({ info }) {
       childrenNo,
       roomNo,
    } = info
-  
+
    const CancleBooking = (id) => {
       const confirm = window.confirm('Do you want to cancle the Booking?')
       if (confirm) {
@@ -36,7 +36,7 @@ export default function myBookingCards({ info }) {
             .put(
                `https://immense-journey-76103.herokuapp.com/bookings/${_id}`,
                {
-                  "status": "Accepted",
+                  status: 'Accepted',
                },
             )
             .then((res) => {
@@ -46,62 +46,64 @@ export default function myBookingCards({ info }) {
       }
    }
    return (
-      <div className="col">
-         <div className="card shadow  border-success mb-3 p-0">
-            <div
-               className={`card-header ${
-                  status === 'pending' ? 'bg-danger' : 'bg-success'
-               } text-white`}
-            >
-               Status : {status}
-            </div>
-            <div className="card-body text-success">
-               <h5 className="card-title">Place : {destination}</h5>
-               <p className="card-text">
-                  <span>Email :</span> <span>{email}</span>
-               </p>
-               <p className="card-text">
-                  <span>Name :</span> <span>{name}</span>
-               </p>
-               <p className="card-text">
-                  <span>Address :</span> <span>{address}</span>
-               </p>
-
-               <p className="card-text">
-                  <span>Journey Date :</span> <span>{JourneyDate}</span>
-               </p>
-               <p className="card-text">
-                  <span>Return Date :</span> <span>{ReturnDate}</span>
-               </p>
-               <p className="card-text d-flex justify-content-between">
-                  <div className="me-2">
-                     <span>Room :</span> <span>{roomNo}</span>
-                  </div>
-                  <div className="me-2">
-                     <span>Adult :</span> <span>{adultNo}</span>
-                  </div>
-                  <div className="me-2">
-                     <span>Children :</span> <span>{childrenNo}</span>
-                  </div>
-               </p>
-            </div>
-            <div className="card-footer bg-transparent border-success d-flex justify-content-center">
-               <button
-                  onClick={() => CancleBooking(_id)}
-                  className="btn btn-outline-danger col me-2"
+      <div className="col ">
+         <div className="">
+            <div className="card shadow  border-success mb-3 p-0 ">
+               <div
+                  className={`card-header ${
+                     status === 'pending' ? 'bg-danger' : 'bg-success'
+                  } text-white`}
                >
-                  Cancel
-               </button>
-               {status === 'pending' ? (
+                  Status : {status}
+               </div>
+               <div className="card-body text-success">
+                  <h5 className="card-title">Place : {destination}</h5>
+                  <p className="card-text">
+                     <span>Email :</span> <span>{email}</span>
+                  </p>
+                  <p className="card-text">
+                     <span>Name :</span> <span>{name}</span>
+                  </p>
+                  <p className="card-text">
+                     <span>Address :</span> <span>{address}</span>
+                  </p>
+
+                  <p className="card-text">
+                     <span>Journey Date :</span> <span>{JourneyDate}</span>
+                  </p>
+                  <p className="card-text">
+                     <span>Return Date :</span> <span>{ReturnDate}</span>
+                  </p>
+                  <p className="card-text d-flex justify-content-between">
+                     <div className="me-2">
+                        <span>Room :</span> <span>{roomNo}</span>
+                     </div>
+                     <div className="me-2">
+                        <span>Adult :</span> <span>{adultNo}</span>
+                     </div>
+                     <div className="me-2">
+                        <span>Children :</span> <span>{childrenNo}</span>
+                     </div>
+                  </p>
+               </div>
+               <div className="card-footer bg-transparent border-success d-flex justify-content-center">
                   <button
-                     onClick={() => AcceptBooking(_id)}
-                     className="btn btn-outline-success col "
+                     onClick={() => CancleBooking(_id)}
+                     className="btn btn-outline-danger col me-2"
                   >
-                     Accept
+                     Cancel
                   </button>
-               ) : (
-                  ''
-               )}
+                  {status === 'pending' ? (
+                     <button
+                        onClick={() => AcceptBooking(_id)}
+                        className="btn btn-outline-success col "
+                     >
+                        Accept
+                     </button>
+                  ) : (
+                     ''
+                  )}
+               </div>
             </div>
          </div>
       </div>
